@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <style>
       @import "./src/style.css";
-      @import "node_modules/c3/c3.min.css";
+      @import "node_modules/c3/c3.css";
     </style>
     <title>JSDev</title>
   </head>
   <body>
+    <div>
+      <button id="transformB" onclick = "chartTransform()">Transform Chart</button>
+    </div>
     <div id = "chart"></div>
     <script type="module">
       import "./src/index.js";
