@@ -1,28 +1,18 @@
 import c3 from "c3";
 
-const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-];
-
 window.chartTransform = function (){
     FileMaker.PerformScript("onTransformChart");
 };
 
+
+//this is the main function called here
 window.loadChart = function (json) {
 const obj = JSON.parse(json);
+console.log("props: ",obj)
 const data = obj.data;
 const chartType = obj.chartType;
+const keys = obj.keys;
+console.log("keys: ",keys)
 
 const options = {
     bindto: '#chart',
@@ -44,10 +34,7 @@ const options = {
         labels: true,
         type: chartType,
         json: data,
-        keys: {
-            x: "month",
-            value: ["Apples", "Peaches", "Pears"],
-        },
+        keys: keys,
     },
 };
 
